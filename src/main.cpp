@@ -21,11 +21,9 @@ int main(int argc, char* argv[]){
   engine = argv[1];
 
   std::vector<double> elements = parseInput(argc, argv);
-//  std::vector<int> elements;
+
   if(!elements.empty()) {
-
 	  Arithmetic<double> *engine_ptr = Arithmetic<double>::factory(engine);
-
 	  double output = engine_ptr->operation(elements);
 	  std::cout<<output<<std::endl;
   }

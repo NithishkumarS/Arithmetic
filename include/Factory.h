@@ -11,6 +11,7 @@
 
 #include "Arithmetic.h"
 #include "Multiplier.h"
+#include "Divider.h"
 
 template <typename T>
 Arithmetic <T> *Arithmetic <T> :: factory(std::string &engine) {
@@ -18,6 +19,10 @@ Arithmetic <T> *Arithmetic <T> :: factory(std::string &engine) {
 	if(engine.compare("Multiplier") ==0) {
 		return new Multiplier<T>;
 	}
+	else if(engine.compare("Divider") ==0) {
+		return new Divider<T>;
+	}
+
 	else
 		throw;
 }
