@@ -2,8 +2,10 @@ set(GTEST_SHUFFLE 1)
 
 add_executable(
     cpp-test
-    main.cpp
+    source.cpp
     test.cpp
+    ../include/Divider.h
+    ../src/Divider.cpp
 )
 
 target_include_directories(cpp-test PUBLIC ../vendor/googletest/googletest/include 
