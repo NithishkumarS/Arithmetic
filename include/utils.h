@@ -54,7 +54,6 @@ vector<double> parseInput(int argc, char* argv[]){
 		for(int i = 3; i < argc; i++){
 			arguements = argv[i];
 			if(arguements.find(suffix) != std::string::npos){
-				cout<<arguements;
 				files.push_back(arguements);
 			}
 
