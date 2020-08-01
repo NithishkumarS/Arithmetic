@@ -1,4 +1,4 @@
-project(ArithmeticEngines)
+project(calc)
 
 cmake_minimum_required (VERSION 3.5)
 
@@ -19,3 +19,4 @@ set(sources
 
 add_subdirectory(vendor/googletest/googletest)
 add_subdirectory(src)
+add_subdirectory(test)
