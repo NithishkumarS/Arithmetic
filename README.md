@@ -1,6 +1,6 @@
-### Calculation Engines
+# Calculation Engines
 
-# Requirements
+## Requirements
 ```
 cmake >= 3.5
 gcc -std=c++0x
@@ -8,7 +8,7 @@ gcc -std=c++0x
 ```
 Clone the repository :  git clone https://github.com/NithishkumarS/Arithmetic.git
 
-# Build instructions
+## Build instructions
 ```
 cd Arithmetic/
 mkdir build
@@ -17,25 +17,26 @@ cmake ..
 make
 ```
 
-# Clean the build
+## Clean the build
 ```
 cd CalculationEngines/
 rm -f build
 ```
 
-# Instructions to run the engines with integer input
+
+## Instructions to run the engines with integer input
 ```
 cd build
 ./src/calc <engine_name> <integer1> <integer2> .....
 ```
 
-# Instructions to run the engines with file lists
+## Instructions to run the engines with file lists
 ```
 cd build
 ./src/calc <engine_name> source <file1> <file2>
 ```
 
-# Instructions to run the unit tests 
+## Instructions to run the unit tests 
 Testing is done using the google test framework
 ```
 cd build
@@ -44,7 +45,7 @@ cd build
 
 
 ```
-# Design and API Documentation
+## Design and API Documentation
 ```
 The Abstract class Arithmetic() defines the structure and primary functionalities of the Arithemetic operations. 
 ```
