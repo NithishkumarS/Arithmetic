@@ -18,6 +18,8 @@ double MAX = std::numeric_limits<double>::max();
 
 int main(int argc, char* argv[]){
 
+  if(!checkArguments(argc, argv))
+	  return 0;
   std::string engine;
   engine = argv[1];
 

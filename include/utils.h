@@ -9,12 +9,25 @@
 #ifndef INCLUDE_UTILS_H_
 #define INCLUDE_UTILS_H_
 
-
-
 #include <iostream>
 #include <vector>
 #include<fstream>
 using namespace std;
+
+bool checkArguments(int argc, char* argv[]){
+  if (argc < 3){
+    cout << "Missing arguments "<<endl;
+    return false;
+  }
+  else{ // Use of wrong engine name
+    string engine = argv[1];
+    if (engine != "Multiplier" and engine != "Divider" ){
+      cout << "Choose one from \"Multipiler\" or \"Divider\"."<<endl;
+      return false;
+    }
+  }
+  return true;
+}
 
 bool FileInput(vector<string>& files, vector<double>& elements) {
 
@@ -29,7 +42,6 @@ bool FileInput(vector<string>& files, vector<double>& elements) {
 		double x;
 		while(file >> x){
 			elements.push_back(x);
-			cout<<x<<endl;
 		}
 		flag = true;
 	}
@@ -48,9 +60,6 @@ vector<double> parseInput(int argc, char* argv[]){
 
 	// Input type is file
 	if(arguements == "source"){
-
-
-
 		for(int i = 3; i < argc; i++){
 			arguements = argv[i];
 			if(arguements.find(suffix) != std::string::npos){
