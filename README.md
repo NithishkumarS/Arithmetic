@@ -44,9 +44,9 @@ cd build
 ```
 
 
-```
+
 ## Design and API Documentation
-```
+
 The Abstract class Arithmetic() defines the structure and primary functionalities of the Arithemetic operations. 
 ```
 class Arithmetic {
