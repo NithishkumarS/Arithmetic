@@ -26,7 +26,7 @@ double Divider<T>::operation(std::vector<T>& elements){
 
   double Quo= elements[0];
 
-  for(auto i=0; i<elements.size(); i++){
+  for(auto i=1; i<elements.size(); i++){
     Quo /= elements[i];
   }
   return Quo;
