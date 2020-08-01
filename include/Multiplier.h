@@ -12,17 +12,27 @@
 #include <iostream>
 #include <vector>
 
-template <typename T>
-class Multiplier : public Arithmetic<T>{
+template<typename T>
+class Multiplier: public Arithmetic<T> {
 
- public:
+public:
 
-   Multiplier();
+	/*
+	 * Constructor
+	 */
+	Multiplier();
 
-  virtual ~Multiplier();
+	/*
+	 * Virtual Destructor
+	 */
+	virtual ~Multiplier();
 
-  double operation(std::vector<T>& arr);
+	/*
+	 * Function redefinition from the base class
+	 * params :  vector of operands
+	 * return :  Computed engine output
+	 */
+	double operation(std::vector<T> &arr);
 };
-
 
 #endif /* INCLUDE_MULTIPLIER_H_ */

@@ -1,7 +1,7 @@
 /*
  * Factory.h
- *
- *  Created on: Aug 1, 2020
+ * @brief  Class objects are chosen and created in runtime.
+ *  Created on: July 31, 2020
  *      Author: nithish
  */
 
@@ -13,6 +13,9 @@
 #include "Multiplier.h"
 #include "Divider.h"
 
+/*
+ *
+ */
 template <typename T>
 Arithmetic <T> *Arithmetic <T> :: factory(std::string &engine) {
 

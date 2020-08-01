@@ -16,10 +16,23 @@ template <typename T>
 class Divider : public Arithmetic<T>{
 
  public:
+	/*
+	 * Constructor
+	 */
 	Divider();
 
+
+	/*
+	 * Virtual Destructor
+	 */
 	virtual ~Divider();
 
+
+	/*
+	 * Function redefinition from the base class
+	 * params :  vector of operands
+	 * return :  Computed engine output
+	 */
 	double operation(std::vector<T>& arr);
 };
 

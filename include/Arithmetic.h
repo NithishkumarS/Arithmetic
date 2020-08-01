@@ -16,8 +16,14 @@ template <typename T>
 class Arithmetic {
 
 public:
+	/*
+	 * Constructor
+	 */
 	Arithmetic() {};
 
+	/*
+	 * Virtual Destructor
+	 */
 	virtual ~Arithmetic() {};
 
 	/**

@@ -1,7 +1,7 @@
 /*
  * test.cpp
- *
- *  Created on: July 31, 2020
+ * @brief Tests the computational ability of Divider engine
+ *  Created on: Aug 1, 2020
  *      Author: Nithish
  */
 
