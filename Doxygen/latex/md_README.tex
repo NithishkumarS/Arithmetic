@@ -1,0 +1,157 @@
+Virtual functions require it $\ast$/ virtual $\sim$\+Arithmetic() \{\};
+
+\# Requirements 
+\begin{DoxyCode}
+cmake >= 3.5
+gcc -std=c++0x
+\end{DoxyCode}
+ Clone the repository \+: git clone \href{https://github.com/NithishkumarS/Arithmetic.git}{\tt https\+://github.\+com/\+Nithishkumar\+S/\+Arithmetic.\+git}
+
+\# Build instructions 
+\begin{DoxyCode}
+cd Arithmetic/
+mkdir build
+cd build
+cmake ..
+make
+\end{DoxyCode}
+
+
+\# Clean the build 
+\begin{DoxyCode}
+cd CalculationEngines/
+rm -f build
+\end{DoxyCode}
+
+
+\# Instructions to run the engines with integer input 
+\begin{DoxyCode}
+cd build
+./src/calc <engine\_name> <integer1> <integer2> .....
+\end{DoxyCode}
+
+
+\# Instructions to run the engines with file lists 
+\begin{DoxyCode}
+cd build
+./src/calc <engine\_name> source <file1> <file2>
+\end{DoxyCode}
+
+
+\section*{Instructions to run the unit tests}
+
+Testing is done using the google test framework 
+\begin{DoxyCode}
+cd build
+./test/cpp-test
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}
+# Design and API Documentation
+\end{DoxyCode}
+ The Abstract class Arithmetic() defines the structure and primary functionalities of the Arithemetic operations. 
+\begin{DoxyCode}
+class Arithmetic \{
+
+public:
+    /*
+     * Constructor
+     */
+    Arithmetic() \{\};
+
+    /*
+     * Virtual Destructor
+     *  /**
+     * Function to create an engine object from the input
+     * params :  name of engine
+     * return :  engine object
+     */
+    static Arithmetic *factory(std::string& engine);
+
+    /*
+     * Pure virtual function to that has to redefined for the corresponding arithmetic operation
+     * params :  vector of operands
+     * return :  Computed engine output
+     */
+    virtual double operation(std::vector<T>& elements) = 0;
+\};
+\end{DoxyCode}
+
+
+Class Multiplier is a derived class. Multiplier.\+h is the header file and Multiplier.\+cpp has the source implementations.
+
+
+\begin{DoxyCode}
+template<typename T>
+class Multiplier: public Arithmetic<T> \{
+
+public:
+
+    /*
+     * Constructor
+     */
+    Multiplier();
+
+    /*
+     * Virtual Destructor
+     */
+    virtual ~Multiplier();
+
+    /*
+     * Function redefinition from the base class
+     * params :  vector of operands
+     * return :  Computed engine output
+     */
+    double operation(std::vector<T> &arr);
+\};
+\end{DoxyCode}
+
+
+Class Divider is another derived class from class Arithmetic. Divider.\+h is the header file and Divider.\+cpp has the source implementations.
+
+Factory.\+h contains the factory method from the Arithmetic class, that helps to create objects in run-\/time. Ideally it can extended to choose between any number of engines. But right now it chooses between Multiplier and Divider engines based on the input given.
+
+
+\begin{DoxyCode}
+template <typename T>
+Arithmetic <T> *Arithmetic <T> :: factory(std::string &engine) \{
+
+    if(engine.compare("Multiplier") ==0) \{
+        return new Multiplier<T>;
+    \}
+    else if(engine.compare("Divider") ==0) \{
+        return new Divider<T>;
+    \}
+
+    else
+        throw;
+\}
+\end{DoxyCode}
+
+
+\subsection*{Using the A\+PI functions}
+
+To utilize the arithmetic engines, follow the following steps 
+\begin{DoxyCode}
+Include the corresponding header, ("Multiplier.h"/ "Divider.h")
+
+Create an engine object with a choice of datatype T(int/ float/ double)
+    Multiplier<T> object1;
+    Divider<T> object2;
+
+Call the function to get the engine output as
+         object1.operation(vector<T> input);  --> returns a computed double output
+
+Abstract class's Factory method can be accessed directly
+    Arithmetic<T> :: factory(string engine);        
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}
+Utilized Google Style Guide
+MIT License
+\end{DoxyCode}
+ 

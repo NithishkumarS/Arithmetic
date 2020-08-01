@@ -6,10 +6,11 @@ cmake >= 3.5
 gcc -std=c++0x
 
 ```
+Clone the repository :  git clone https://github.com/NithishkumarS/Arithmetic.git
 
 # Build instructions
 ```
-cd CalculationEngines/
+cd Arithmetic/
 mkdir build
 cd build
 cmake ..
